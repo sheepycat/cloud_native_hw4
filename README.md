@@ -11,6 +11,7 @@ git clone https://github.com/sheepycat/cloud_native_hw4.git
 ### build image from local
 ```bash
 cd local
+
 # This will automatically build the image using the Dockerfile and run the container：
 sudo docker-compose up -d
 
