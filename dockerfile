@@ -1,0 +1,21 @@
+FROM ubuntu:24.04
+
+# openssh-server + sudo
+RUN apt-get update && \
+    apt-get install -y openssh-server && \
+    mkdir /var/run/sshd
+
+# usr account
+RUN useradd -m -s /bin/bash student && \
+    echo 'student:student' | chpasswd && \
+    echo 'PermitEmptyPasswords no' >> /etc/ssh/sshd_config
+
+
+# sudo
+RUN apt-get install -y sudo && \
+    usermod -aG sudo student && \
+    echo 'student ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+# SSH-> port 22， activate sshd
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
