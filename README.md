@@ -3,20 +3,22 @@
 ## Usage
 
 ### Clone Repo
-```code
+```bash
 git clone https://github.com/sheepycat/cloud_native_hw4.git
 ```
-### build image from local
-```code
-cd local
 
-# use docker-compose.yml:
+* Use docker-compose.yml to help building and running. Settings can be modified in the file. (binding port, docker hub repo, binding dir...etc)
+### build image from local
+```bash
+cd local
+# This will automatically build the image using the Dockerfile and run the container：
 sudo docker-compose up -d
+
 ```
 ### Use Pre-Built image from Docker Hub
-```code
+```bash
 cd built
 
-# use docker-compose.yml:
+# This will pull the pre-built image from Docker Hub and run the container：
 sudo docker-compose up -d
 ```
