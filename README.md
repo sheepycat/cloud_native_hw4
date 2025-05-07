@@ -4,7 +4,7 @@
 
 ### Clone Repo
 ```code
-git clone 
+git clone https://github.com/sheepycat/cloud_native_hw4.git
 ```
 ### uild image from local
 ```code
