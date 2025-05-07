@@ -1,0 +1,11 @@
+
+services:
+  ubuntu_hw:
+    image: sheepycat/2025cloud:ubuntu-v2  
+    ports:
+      - "22222:22"  
+    environment:
+      - EDITOR=vim  
+    volumes:
+      - ./data/home:/home/student  
+    restart: unless-stopped  
