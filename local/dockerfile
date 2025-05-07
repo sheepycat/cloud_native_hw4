@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+
 
 # openssh-server + sudo
 RUN apt-get update && \
