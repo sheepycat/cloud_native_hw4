@@ -1,0 +1,12 @@
+version: '1'
+
+services:
+  ubuntu_hw:
+    build: .
+    ports:
+      - "22225:22"   
+    environment:
+      - EDITOR=vim
+    volumes:
+      - ./data/home:/home/student  
+    restart: unless-stopped
