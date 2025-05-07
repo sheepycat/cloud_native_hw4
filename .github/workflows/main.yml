@@ -2,10 +2,9 @@ name: Docker CI
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'local/**'
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build-and-push:
