@@ -14,3 +14,9 @@ jobs:
 
     - name: Log in to DockerHub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Build Docker image
+      run: docker build -t sheepycat/2025cloud:ubuntu-v3 ./local
+
+    - name: Push Docker image
+      run: docker push sheepycat/2025cloud:ubuntu-v3
